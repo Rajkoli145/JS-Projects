@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Toggle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="menuBtn" aria-label="Open sidebar" class="menu-button">
+  <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+    <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<div id="backdrop" class="backdrop"></div>
+
+
+<div id="sidebar" class="sidebar">
+  <button id="closeBtn" class="close-button" aria-label="Close sidebar">×</button>
+  <h2>Menu</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

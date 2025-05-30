@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
+    #color-box {
+        width: 200px;
+        height: 200px;
+        background: #cccccc;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #color-code {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+        letter-spacing: 2px;
+    }
+
+    button {
+        padding: 12px 32px;
+        font-size: 1rem;
+        background: #0078d7;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: background 0.2s;
+    }
+
+    button:hover {
+        background: #005fa3;
+    }
+</style>
+<body>
+    <div id="color-box"></div>
+    <p id="color-code"></p>
+    <button onclick="generateColor()">Click me</button>
+</body>
+<script>
+    function generateColor() {
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      document.getElementById("color-box").style.backgroundColor = randomColor;
+      document.getElementById("color-code").textContent = randomColor;
+    }
+</script>
+</html>
