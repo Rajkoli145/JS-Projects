@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem-Generator</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        font-family: sans-serif;
+      }
+
+      input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 200px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #b952c3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+    </style>
+</head>
+<body>
+
+   <h2>Enter a Number:</h2>
+<div class="input-container">
+  <input type="number" id="numberInput" placeholder="Type a number" />
+  <button onclick="handleNumber()">Submit</button>
+</div>
+
+<p id="output"></p>
+
+<script>
+function handleNumber() {
+  const number = parseInt(document.getElementById('numberInput').value);
+  const text = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
+  const words = text.split(" ");
+
+  let result = [];
+  let i = 0;
+
+  while (i < number) {
+    result.push(words[i % words.length]);
+    i++;
+  }
+
+  document.getElementById('output').textContent = result.join(" ");
+}
+// function handleNumber() {
+//   const number = parseInt(document.getElementById('numberInput').value);
+//   const text = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
+//   const words = text.split(" ");
+
+//   let result = "";
+
+//   switch (number) {
+//     case 1:
+//       result += words[0] + " ";
+//     case 2:
+//       result += words[1] + " ";
+//     case 3:
+//       result += words[2] + " ";
+//     case 4:
+//       result += words[3] + " ";
+//     case 5:
+//       result += words[4] + " ";
+//     case 6:
+//       result += words[5] + " ";
+//     case 7:
+//       result += words[6] + " ";
+//     case 8:
+//       result += words[7] + " ";
+//     case 9:
+//       result += words[8] + " ";
+//     case 10:
+//       result += words[9] + " ";
+//       break;
+//     default:
+//       result = "Please enter a number between 1 and 10.";
+//   }
+
+//   document.getElementById('output').textContent = result.trim();
+// }
+
+
+
+
+</script>
+    
+</body>
+</html>

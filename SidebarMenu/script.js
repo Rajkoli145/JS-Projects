@@ -1,4 +1,4 @@
-const menuBtn = document.getElementById('menuBtn');
+const menuBtn1 = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('closeBtn');
 const sidebar = document.getElementById('sidebar');
 const backdrop = document.getElementById('backdrop');
