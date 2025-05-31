@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player Controls</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    video {
+    
+    width: 900px;
+    margin-bottom: 10px;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+  
+    }
+    .controls button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Custom Video Player</h1>
+
+  <video id="videoPlayer" src="spiderverse.mp4" controlsList="nodownload"></video>
+
+  <div class="controls">
+    <button id="togglePlayPause" onclick="togglePlayPause()"><i class="fas fa-play"></i></button>
+    <button onclick="skip(10)"><i class="fas fa-forward"></i></button>
+    <button onclick="skip(-10)"><i class="fas fa-backward"></i></button>
+  </div>
+
+  <script>
+    const video = document.getElementById('videoPlayer');
+    const toggleBtn = document.getElementById('togglePlayPause');
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        toggleBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        video.pause();
+        toggleBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    }
+
+    function skip(seconds) {
+      video.currentTime += seconds;
+    }
+  </script>
+
+</body>
+</html>

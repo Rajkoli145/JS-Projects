@@ -1,4 +1,4 @@
-const menuBtn1 = document.getElementById('menuBtn');
+const menuBtn1 = document.getElementById('menuBtn1');
 const closeBtn = document.getElementById('closeBtn');
 const sidebar = document.getElementById('sidebar');
 const backdrop = document.getElementById('backdrop');
@@ -7,7 +7,7 @@ const backdrop = document.getElementById('backdrop');
 function openSidebar() {
   sidebar.classList.add('active');
   backdrop.classList.add('active');
-  menuBtn.style.display = 'none';    // Hide ☰ icon
+  menuBtn1.style.display = 'none';    // Hide ☰ icon
   closeBtn.style.display = 'block';  // Show × icon
 }
 
@@ -15,11 +15,11 @@ function openSidebar() {
 function closeSidebar() {
   sidebar.classList.remove('active');
   backdrop.classList.remove('active');
-  menuBtn.style.display = 'inline-block';  // Show ☰ icon again
+  menuBtn1.style.display = 'inline-block';  // Show ☰ icon again
   closeBtn.style.display = 'none';         // Hide × icon
 }
 
 // Event Listeners
-menuBtn.addEventListener('click', openSidebar);
+menuBtn1.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
 backdrop.addEventListener('click', closeSidebar);
